@@ -1,0 +1,78 @@
+name: eyestagram
+description: "Instagram mock for the advertising disclosures research study."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.10+1
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/logos/
+    - assets/images/icons/
+    - assets/images/posts/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Grandista
+      fonts:
+        - asset: assets/fonts/Grandista-Regular.otf
+    - family: SF Pro
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Black.otf
+          weight: 900
+        - asset: assets/fonts/SF-Pro-Text-Heavy.otf
+          weight: 800
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+          weight: 700
+        - asset: assets/fonts/SF-Pro-Text-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+        - asset: assets/fonts/SF-Pro-Text-Light.otf
+          weight: 300
+        - asset: assets/fonts/SF-Pro-Text-Ultralight.otf
+          weight: 200
+        - asset: assets/fonts/SF-Pro-Text-Thin.otf
+          weight: 100
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
