@@ -39,6 +39,7 @@ class EyestagramPage extends StatefulWidget {
 
 class _EyestagramPageState extends State<EyestagramPage> {
   bool isSponsored = false;
+  bool isSponsoredAlt = false;
   bool isVerified = false;
   bool expanded = false;
 
@@ -161,9 +162,25 @@ class _EyestagramPageState extends State<EyestagramPage> {
                         });
                       },
                     ),
-                    const EyestaMenuTile(
+                    EyestaMenuTile(
                       leading: EyestagramIcon('assets/images/icons/reels.svg'),
                       titleText: 'Reels',
+                      onTap: () {
+                        setState(() {
+                          isSponsoredAlt = !isSponsoredAlt;
+                          expanded = false;
+                          next = random.nextInt(brands.length);
+                          duration = getDuration();
+                          nduration = getDuration();
+                          likes = (random.nextInt(1000) * random.nextDouble())
+                                  .toInt() +
+                              2;
+                          pcomments =
+                              (likes * 0.1 * random.nextDouble()).toInt() + 2;
+                          comments =
+                              (likes * 0.1 * random.nextDouble()).toInt() + 2;
+                        });
+                      },
                     ),
                     const EyestaMenuTile(
                       leading:
@@ -435,12 +452,40 @@ class _EyestagramPageState extends State<EyestagramPage> {
                   ),
 
                   /// -- Post Image
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
-                    child: Image(
-                      image: AssetImage('assets/images/posts/$account.jpeg'),
-                      width: 468,
-                    ),
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
+                        child: Image(
+                          image:
+                              AssetImage('assets/images/posts/$account.jpeg'),
+                          width: 468,
+                        ),
+                      ),
+                      isSponsoredAlt
+                          ? Container(
+                              width: 468,
+                              height: 468,
+                              padding: const EdgeInsets.all(4.0),
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(4.0),
+                                    ),
+                                    color: Color(0xA6000000),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 2.0, horizontal: 8.0),
+                                  child: const Text(
+                                    'Sponsored',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  )),
+                            )
+                          : const SizedBox(),
+                    ],
                   ),
 
                   /// -- CTA Button
