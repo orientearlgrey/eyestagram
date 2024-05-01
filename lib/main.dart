@@ -1,4 +1,4 @@
-import 'package:eyestagram/screens/eyestagram_page.dart';
+import 'package:eyestagram/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class EyestagramApp extends StatelessWidget {
     return MaterialApp(
       title: 'Instagram',
       theme: ThemeData.light(),
-      home: const EyestagramPage(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
