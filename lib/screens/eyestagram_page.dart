@@ -48,7 +48,7 @@ class _EyestagramPageState extends State<EyestagramPage> {
   String duration = '';
   String nduration = '';
 
-  int current = 260;
+  int current = 0;
   int next = 0;
 
   int likes = 0;
@@ -210,7 +210,6 @@ class _EyestagramPageState extends State<EyestagramPage> {
                             comments =
                                 (likes * 0.1 * random.nextDouble()).toInt() + 2;
                           }
-                          ;
                         });
                       },
                     ),
@@ -234,7 +233,6 @@ class _EyestagramPageState extends State<EyestagramPage> {
                             comments =
                                 (likes * 0.1 * random.nextDouble()).toInt() + 2;
                           }
-                          ;
                         });
                       },
                     ),
@@ -587,7 +585,7 @@ class _EyestagramPageState extends State<EyestagramPage> {
                               ),
                             ),
                             WidgetSpan(
-                              child: !expanded
+                              child: (!expanded & (more == 'true'))
                                   ? SizedBox(
                                       width: 60,
                                       child: InkWell(
