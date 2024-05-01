@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EyestaMenuTile extends StatelessWidget {
-  const EyestaMenuTile({
+class EyestagramMenuTile extends StatelessWidget {
+  const EyestagramMenuTile({
     super.key,
     required this.leading,
     required this.titleText,
@@ -19,8 +19,11 @@ class EyestaMenuTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.symmetric(
-        horizontal: 0,
+        horizontal: 12,
         vertical: tileSpacing,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
       ),
       leading: leading,
       title: Text(
